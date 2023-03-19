@@ -12,11 +12,27 @@ function App() {
  /**
   * code here
   */
-
+const [error,setError]=useState("")
+const [email,setEmail]=useState("")
+const emailHandler(e)=>{
+ setEmail(e.target.value)
+}
+const handleError =()=>{
+ if(!email.includes("@")){
+  setError("Email is invalid")
+}else{
+ setError("")
+}
+}
+const handleSubmit = (e)=>{
+ if(error){
+  e.preventDefault()
+ }
+}
   return(
     <div className="App">
       <h1>How About Them Apples</h1>
-      <form>
+      <form onClick={handleSubmit}>
         <fieldset>
           <label>
             <p>First Name</p>
