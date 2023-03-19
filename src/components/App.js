@@ -14,7 +14,7 @@ function App() {
   */
 const [error,setError]=useState("")
 const [email,setEmail]=useState("")
-const emailHandler(e)=>{
+const emailHandler=(e)=>{
  setEmail(e.target.value)
 }
 const handleError =()=>{
